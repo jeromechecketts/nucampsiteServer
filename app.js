@@ -14,8 +14,9 @@ const mongoose = require('mongoose');
 
 const passport = require('passport');
 const authenticate = require('./authenticate');
+const config = require('./config');
 
-const url = 'mongodb://localhost:27017/nucampsite';
+const url = config.mongoUrl;
 const connect = mongoose.connect(url, {
 	useCreateIndex: true,
 	useFindAndModify: false,
