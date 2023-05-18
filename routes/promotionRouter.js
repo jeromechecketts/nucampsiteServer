@@ -32,6 +32,7 @@ promotionRouter
 	)
 	.put(authenticate.verifyUser, (req, res) => {
 		res.statusCode = 403;
+		res.setHeader('Content-Type', 'text/plain');
 		res.end('PUT operation not supported on /promotions');
 	})
 	.delete(
@@ -62,6 +63,7 @@ promotionRouter
 	})
 	.post(authenticate.verifyUser, (req, res) => {
 		res.statusCode = 403;
+		res.setHeader('Content-Type', 'text/plain');
 		res.end(
 			`POST operation not supported on /promotions/${req.params.promotionId}`
 		);

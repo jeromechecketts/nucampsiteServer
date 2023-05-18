@@ -33,6 +33,7 @@ campsiteRouter
 	)
 	.put(authenticate.verifyUser, authenticate.verifyAdmin, (req, res) => {
 		res.statusCode = 403;
+		res.setHeader('Content-Type', 'text/plain');
 		res.end('PUT operation not supported on /campsites');
 	})
 	.delete(
@@ -64,6 +65,7 @@ campsiteRouter
 	})
 	.post(authenticate.verifyUser, (req, res) => {
 		res.statusCode = 403;
+		res.setHeader('Content-Type', 'text/plain');
 		res.end(
 			`POST operation not supported on /campsites/${req.params.campsiteId}`
 		);
@@ -143,6 +145,7 @@ campsiteRouter
 	})
 	.put(authenticate.verifyUser, (req, res) => {
 		res.statusCode = 403;
+		res.setHeader('Content-Type', 'text/plain');
 		res.end(
 			`PUT operation not supported on /campsites/${req.params.campsiteId}/comments`
 		);
@@ -214,6 +217,7 @@ campsiteRouter
 	})
 	.post(authenticate.verifyUser, (req, res) => {
 		res.statusCode = 403;
+		res.setHeader('Content-Type', 'text/plain');
 		res.end(
 			`POST operation not supported on /campsites/${req.params.campsiteId}/comments/${req.params.commentId}`
 		);
@@ -294,7 +298,7 @@ campsiteRouter
 							.catch((err) => next(err));
 					} else {
 						err = new Error(
-							'You are not authorized to update this comment!'
+							'You are not authorized to delete this comment!'
 						);
 						err.status = 403;
 						return next(err);
