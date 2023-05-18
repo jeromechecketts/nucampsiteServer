@@ -9,6 +9,7 @@ const usersRouter = require('./routes/users');
 const campsiteRouter = require('./routes/campsiteRouter');
 const promotionRouter = require('./routes/promotionRouter');
 const partnerRouter = require('./routes/partnerRouter');
+const uploadRouter = require('./routes/uploadRouter');
 
 const mongoose = require('mongoose');
 
@@ -93,6 +94,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/campsites', campsiteRouter); // This is the route for the campsiteRouter
 app.use('/promotions', promotionRouter); // This is the route for the promotionRouter
 app.use('/partners', partnerRouter); // This is the route for the partnerRouter
+app.use('/imageUpload', uploadRouter); // This is the route for the uploadRouter
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
