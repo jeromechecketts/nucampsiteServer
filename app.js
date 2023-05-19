@@ -76,19 +76,19 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-function auth(req, res, next) {
-	console.log(req.user);
+// function auth(req, res, next) {
+// 	console.log(req.user);
 
-	if (!req.user) {
-		const err = new Error('You are not authenticated!');
-		err.status = 401;
-		return next(err);
-	} else {
-		return next();
-	}
-}
+// 	if (!req.user) {
+// 		const err = new Error('You are not authenticated!');
+// 		err.status = 401;
+// 		return next(err);
+// 	} else {
+// 		return next();
+// 	}
+// }
 
-app.use(auth);
+// app.use(auth);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/campsites', campsiteRouter); // This is the route for the campsiteRouter
