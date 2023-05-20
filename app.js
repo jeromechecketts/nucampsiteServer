@@ -10,6 +10,7 @@ const campsiteRouter = require('./routes/campsiteRouter');
 const promotionRouter = require('./routes/promotionRouter');
 const partnerRouter = require('./routes/partnerRouter');
 const uploadRouter = require('./routes/uploadRouter');
+const favoriteRouter = require('./routes/favoriteRouter');
 
 const mongoose = require('mongoose');
 
@@ -95,6 +96,7 @@ app.use('/campsites', campsiteRouter); // This is the route for the campsiteRout
 app.use('/promotions', promotionRouter); // This is the route for the promotionRouter
 app.use('/partners', partnerRouter); // This is the route for the partnerRouter
 app.use('/imageUpload', uploadRouter); // This is the route for the uploadRouter
+app.use('/favorites', favoriteRouter); // This is the route for the favoriteRouter
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
